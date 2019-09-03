@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+        <div class="flex-center position-ref full-height">
+            <div class="content h-100 w-100">
+                <div class="m-b-md h-100">
+                    <div id = "piyo" class="h-25 above">ほげ</div>
+                    <div class="h-50 dwn">test</div>
+                    <div class="h-50 foot">
+                        <form action= "{{ route('main') }}" method="get" accept-charset="utf-8">
+                            {{ csrf_field() }}
+                            <div id="txtarea1">
+                            <div id="top_form1">
+                                <textarea id="txt1" name="txt1" value = "test" cols="15" rows="1">mogaaa</textarea>
+                                <textarea id="txt2" name="txt1" cols="15" rows="1"></textarea>
+                            </div>
+                            <div id="btm_form1">
+                                <textarea name="txt1" cols="50" rows="5"></textarea>
+                            </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">送信</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style type="text/css" media="screen">
+                     html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                position: relative;
+                /*text-align: center;*/
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+            .above{
+                background-color: aqua;
+            }
+            .dwn{
+                background-color: blue;
+            }
+            .foot{
+                background-color: green;
+            }
+            #top_form1{
+                background-color: red;
+                left:-1120px;
+            }
+
+        </style>
+        <script src="./test11.js" defer></script>
+        </body>
+        </html>
