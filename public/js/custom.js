@@ -21,6 +21,7 @@ $("#texts_koushin").on('click',function(){
     }).then((data,stts,xhr)=>{
         console.log("done_post",data);
         // var piyo = data;
+        //sample date_string: "2019-09-06 14:32:57"
         let str = '';
         let dater = (date,format)=>{
             format = format.replace(/yyyy/,date.getFullYear());
@@ -33,7 +34,11 @@ $("#texts_koushin").on('click',function(){
             return format;
         };
             data.texts.forEach((val,index)=>{
-                let dat = new Date(val.created_at);
+             let date = val.created_at.split(' ')[0];
+             let d_arr = date.split('-')
+             let time = val.created_at.split(' ')[1];
+             let t_arr = time.split(':');
+             let dat = new Date(d_arr[0],d_arr[1]-1,d_arr[2],t_arr[0],t_arr[1],t_arr[2]);
                 str+='<div>名前：'+ val.name + 'メール:'+val.mail + 'ID:'+ val.ip +' 投稿日:' + dater(dat,'yyyy年mm月dd日(week) h:min:sec') +
                 '</div>'+'<li class="h-25 above">'+ val.text +'</li>';
             },str,dater);
